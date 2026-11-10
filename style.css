@@ -1,0 +1,466 @@
+/* =====================================================
+   TIE ROUND - MAIN STYLESHEET
+   ===================================================== */
+
+:root {
+    --sky-bg: #3fd0ec;
+    --purple: #3a2a6e;
+    --panel-bg: #eaf6ff;
+    --yellow: #ffd23f;
+    --green: #22c84b;
+    --green-dark: #118532;
+    --red: #ff3838;
+    --red-dark: #a81717;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    background: var(--sky-bg);
+    color: var(--purple);
+}
+
+#stage {
+    width: 100%;
+    height: 100dvh;
+    min-height: 400px;
+    background: var(--sky-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   COMMON SCREEN STYLES
+   ===================================================== */
+
+.screen {
+    position: absolute;
+    inset: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.screen.active {
+    display: flex;
+}
+
+
+/* =====================================================
+   HOME SCREEN
+   ===================================================== */
+
+#screen-home {
+    justify-content: flex-start;
+    padding: 20px 35px;
+}
+
+.home-branding {
+    width: 100%;
+    height: 190px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.gov-logo {
+    width: clamp(130px, 15vw, 200px);
+    height: auto;
+    max-height: 180px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+.corner-signature {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    max-width: 360px;
+
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: clamp(23px, 2.5vw, 32px);
+    font-weight: 900;
+    line-height: 1.5;
+
+    color: #d62828;
+    text-align: right;
+
+    text-shadow: 1px 1px 0 white;
+    z-index: 5;
+}
+
+.home-content {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 70px;
+}
+
+.pixel-title {
+    text-align: center;
+    color: var(--purple);
+    font-weight: 900;
+    line-height: 1.5;
+    z-index: 2;
+}
+
+.title-hi-line {
+    display: block;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: clamp(42px, 6vw, 76px);
+    font-weight: 900;
+    margin-bottom: 12px;
+    color: var(--purple);
+    text-shadow: 3px 3px 0 white;
+}
+
+.title-en-line {
+    display: block;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: clamp(42px, 6vw, 72px);
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: var(--purple);
+    text-shadow: 3px 3px 0 white;
+}
+
+.pixel-btn {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: clamp(22px, 2.5vw, 30px);
+    font-weight: 900;
+
+    padding: 15px 55px;
+    margin-top: 45px;
+
+    background: linear-gradient(180deg, #ffe36a, #ffbd26);
+    color: #25194e;
+
+    border: 4px solid #25194e;
+    border-radius: 40px;
+
+    box-shadow: 0 6px 0 #8c6011;
+
+    cursor: pointer;
+    z-index: 3;
+    transition: transform 0.15s;
+}
+
+.pixel-btn:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   LOGO AND NAVIGATION
+   ===================================================== */
+
+.small-logo {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 85px;
+    height: auto;
+    max-height: 95px;
+    object-fit: contain;
+
+    z-index: 3;
+}
+
+.back-btn,
+.home-btn {
+    position: absolute;
+    top: 18px;
+    width: 54px;
+    height: 54px;
+
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Arial, sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.back-btn {
+    left: 18px;
+    background: linear-gradient(135deg, #ffcf6b, #e8890c);
+    border: 3px solid #a85c00;
+    box-shadow: 0 4px 0 #a85c00;
+}
+
+.home-btn {
+    left: 85px;
+    background: linear-gradient(135deg, #6bdcff, #2389d7);
+    border: 3px solid #155b91;
+    box-shadow: 0 4px 0 #155b91;
+}
+
+
+/* =====================================================
+   QUESTION SELECTION SCREEN
+   ===================================================== */
+
+#screen-levels {
+    padding: 10px;
+}
+
+.panel {
+    width: min(95%, 1200px);
+    height: min(650px, calc(100dvh - 120px));
+
+    background: var(--panel-bg);
+
+    border: 6px solid #8fb9dd;
+    border-radius: 24px;
+
+    padding: 16px 28px;
+    margin-top: 55px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow: hidden;
+    z-index: 2;
+}
+
+.panel-header {
+    font-size: clamp(26px, 2.8vw, 36px);
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 14px;
+    flex-shrink: 0;
+}
+
+.level-grid {
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+.level-btn {
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: clamp(30px, 3vw, 42px);
+    font-weight: 900;
+
+    color: white;
+    background: linear-gradient(180deg, #3fc9f0, #3d5fd8);
+
+    border: none;
+    border-radius: 13px;
+
+    box-shadow: 0 5px 0 #23368f;
+
+    cursor: pointer;
+    transition: transform 0.15s;
+}
+
+.level-btn:hover {
+    transform: translateY(-3px);
+}
+
+.level-btn.completed {
+    background: linear-gradient(180deg, #40d879, #139b4b);
+    box-shadow: 0 5px 0 #087139;
+}
+
+
+/* =====================================================
+   QUIZ SCREEN
+   ===================================================== */
+
+#screen-quiz {
+    padding: 20px 30px;
+    justify-content: center;
+}
+
+.watermark-logo {
+    position: absolute;
+    width: clamp(250px, 30vw, 400px);
+    height: auto;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: 0;
+}
+
+#screen-quiz .corner-signature {
+    font-size: clamp(18px, 2vw, 25px);
+    top: 15px;
+    right: 20px;
+}
+
+.quiz-container {
+    width: 100%;
+    max-width: 1350px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+    z-index: 2;
+}
+
+
+/* =====================================================
+   QUESTION BOX
+   ===================================================== */
+
+.question-card {
+    width: 100%;
+    min-height: 120px;
+    max-height: 220px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px 35px;
+
+    background: rgba(255, 255, 255, 0.96);
+    border: 4px solid #1a1a2e;
+    border-radius: 20px;
+
+    box-shadow: 0 7px 0 rgba(0, 0, 0, 0.2);
+
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Increased Question Font Size */
+.question-text {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: clamp(26px, 3.2vw, 40px);
+    font-weight: 900;
+
+    color: #001242;
+    line-height: 1.4;
+
+    width: 100%;
+    overflow-wrap: anywhere;
+    white-space: pre-line;
+}
+
+/* Slightly adjusted size for longer questions so they still fit nicely */
+#screen-quiz.question-long .question-text {
+    font-size: clamp(21px, 2.4vw, 31px);
+    line-height: 1.35;
+}
+
+
+/* =====================================================
+   ANSWER OPTIONS
+   ===================================================== */
+
+.options-grid {
+    width: 100%;
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.option-btn {
+    min-height: 105px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    text-align: left;
+
+    padding: 18px 25px;
+
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: clamp(20px, 2.3vw, 30px);
+    font-weight: 900;
+
+    color: #18244e;
+    background: #ffffff;
+
+    border: 4px solid #3a2a6e;
+    border-radius: 16px;
+
+    box-shadow: 0 6px 0 #23368f;
+
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.option-btn:hover:not(:disabled) {
+    background: #e6efff;
+}
+
+.option-btn:disabled {
+    cursor: default;
+}
+
+
+/* CORRECT ANSWER */
+
+.option-btn.correct {
+    background: #27c84b !important;
+    color: #ffffff !important;
+
+    border-color: #087a29;
+    box-shadow: 0 6px 0 #087a29;
+}
+
+
+/* WRONG ANSWER */
+
+.option-btn.wrong {
+    background: #ff3838 !important;
+    color: #ffffff !important;
+
+    border-color: #a81717;
+    box-shadow: 0 6px 0 #a81717;
+}

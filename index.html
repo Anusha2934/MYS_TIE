@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>टक्कर | TIE ROUND</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="stage">
+
+        <!-- HOME SCREEN -->
+        <section id="screen-home" class="screen active">
+
+            <div class="home-branding">
+                <img class="gov-logo" src="logo.png" alt="Government Logo">
+
+                <div class="corner-signature">
+                    त्रिगुणसेन पंडित,<br>
+                    वरिष्ठ अनुवाद अधिकारी
+                </div>
+            </div>
+
+            <div class="home-content">
+
+                <h1 class="pixel-title">
+                    <span class="title-hi-line">
+                        टक्कर
+                    </span>
+
+                    <span class="title-en-line">
+                        TIE ROUND
+                    </span>
+                </h1>
+
+                <button class="pixel-btn" id="btn-start">
+                    शुरू करें / START
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUESTION SELECTION SCREEN -->
+        <section id="screen-levels" class="screen">
+
+            <button class="back-btn" id="btn-back-to-home" aria-label="Back">
+                ←
+            </button>
+
+            <img class="small-logo" src="logo.png" alt="Government Logo">
+
+            <div class="corner-signature">
+                त्रिगुणसेन पंडित,<br>
+                वरिष्ठ अनुवाद अधिकारी
+            </div>
+
+            <div class="panel">
+
+                <h2 class="panel-header">
+                    प्रश्न चुनें / SELECT A QUESTION
+                </h2>
+
+                <div class="level-grid" id="level-grid"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUIZ SCREEN -->
+        <section id="screen-quiz" class="screen">
+
+            <button class="back-btn" id="btn-back-to-levels" aria-label="Back">
+                ←
+            </button>
+
+            <button class="home-btn" id="btn-home-from-quiz" aria-label="Home">
+                ⌂
+            </button>
+
+            <img class="watermark-logo" src="logo.png" alt="">
+
+            <div class="corner-signature">
+                त्रिगुणसेन पंडित,<br>
+                वरिष्ठ अनुवाद अधिकारी
+            </div>
+
+            <main class="quiz-container">
+
+                <div class="question-card">
+
+                    <h2 class="question-text" id="question-text"></h2>
+
+                </div>
+
+                <div class="options-grid" id="options-grid"></div>
+
+            </main>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
